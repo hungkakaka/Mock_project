@@ -43,6 +43,7 @@ uint8_t read_boot_sector(data_boot_sector *a)
 
     return retval;
 }
+//update abc
 uint8_t read_root_directory(data_entry *a, uint8_t *num_entry, uint32_t cluster,uint16_t num_sec)
 {
 	*num_entry = 0;
@@ -82,15 +83,15 @@ uint8_t read_root_directory(data_entry *a, uint8_t *num_entry, uint32_t cluster,
 			}
 			else if(i == j*32 + 22)
 			{
-				(a + (k/32))->time.seconds=data[i] + (data[i + 1] << 8);
-				(a + (k/32))->time.minutes=(data[i] + (data[i + 1] << 8)) >> 5;
-				(a + (k/32))->time.hours=(data[i] + (data[i + 1] << 8)) >> 11;					
+				(a + (k/32))->modifile_time.seconds=data[i] + (data[i + 1] << 8);
+				(a + (k/32))->modifile_time.minutes=(data[i] + (data[i + 1] << 8)) >> 5;
+				(a + (k/32))->modifile_time.hours=(data[i] + (data[i + 1] << 8)) >> 11;					
 			}
 			else if(i == j*32 + 24)
 			{
-				(a + (k/32))->date.days=data[i] + (data[i + 1] << 8);
-				(a + (k/32))->date.months=(data[i] + (data[i + 1] << 8)) >> 5;
-				(a + (k/32))->date.years=(data[i] + (data[i + 1] << 8)) >> 9;			
+				(a + (k/32))->modifile_date.days=data[i] + (data[i + 1] << 8);
+				(a + (k/32))->modifile_date.months=(data[i] + (data[i + 1] << 8)) >> 5;
+				(a + (k/32))->modefile_date.years=(data[i] + (data[i + 1] << 8)) >> 9;			
 			}
 			else if(i == j*32 + 28)
 			{
@@ -103,7 +104,6 @@ uint8_t read_root_directory(data_entry *a, uint8_t *num_entry, uint32_t cluster,
 			k++;
 		}
 	}
-	printf("\ngia tri cua i la SSSSSS=%d",i);
 	free(data);
 
     return retval;
