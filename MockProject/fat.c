@@ -52,7 +52,7 @@ uint8_t read_root_directory(data_entry *a, uint8_t *num_entry, uint32_t cluster,
 	
 	data = (uint8_t *)calloc(num_sec,512);
 	int retval = correct;
-	//printf("\nso sector la11111:%d ",num_sec);
+	printf("\nso sector la11111:%d ",num_sec);
 	if(kmc_read_multi_sector(cluster,num_sec, data) == 0)
 	{
 		retval = incorrect;
@@ -91,7 +91,7 @@ uint8_t read_root_directory(data_entry *a, uint8_t *num_entry, uint32_t cluster,
 			{
 				(a + (k/32))->modifile_date.days=data[i] + (data[i + 1] << 8);
 				(a + (k/32))->modifile_date.months=(data[i] + (data[i + 1] << 8)) >> 5;
-				(a + (k/32))->modefile_date.years=(data[i] + (data[i + 1] << 8)) >> 9;			
+				(a + (k/32))->modifile_date.years=(data[i] + (data[i + 1] << 8)) >> 9;			
 			}
 			else if(i == j*32 + 28)
 			{

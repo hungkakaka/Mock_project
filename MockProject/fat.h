@@ -21,8 +21,8 @@ typedef struct {
 typedef struct{
 	uint8_t name[9];
 	uint8_t wide_dissection[4];
-	time time;
-	date date;
+	time modifile_time;
+	date modifile_date;
 	uint32_t size;
 	uint32_t cluster;
 } data_entry;
