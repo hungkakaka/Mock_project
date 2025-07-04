@@ -1,0 +1,6 @@
+1. what is 100-Base-TX?
+2. how to distinguish between unicast, muticast, boardcast?
+3. What is ethenet frame with vtag and without vtag?
+4. how many bytes of IPV4?
+5. Frame of ARP?
+6. What is strengths and weakness of TCP with UDP?
