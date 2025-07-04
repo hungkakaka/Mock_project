@@ -192,4 +192,4 @@ int main(void)
 		printf("\ndata of fat table is %d",b->data);
 		b=b->pNext;
 	}
-*/
+*/Hungle
